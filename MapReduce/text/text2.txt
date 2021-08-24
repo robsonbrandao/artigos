@@ -1,0 +1,1 @@
+Contaminacao de dados, que envolve o fornecimento de dados sem sentido ou prejudiciais.  AdNauseam, por exemplo, eh uma extensão de navegador que clica em cada anuncio veiculado para voce, confundindo os algoritmos de segmentacao de anuncios do Google.
