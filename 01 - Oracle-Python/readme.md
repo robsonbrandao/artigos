@@ -24,6 +24,6 @@ O pacote cx_Oracle é um módulo de extensão Python que permite acesso ao banco
 
 
 
-![The cell output is displayed.] (cx_Oracle.png "Data hub")
+![The cell output is displayed.] (/cx_Oracle.png "Data hub")
 
 
