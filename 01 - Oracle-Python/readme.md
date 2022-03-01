@@ -145,12 +145,12 @@ print()
 print("Foram recuperadas "+str(cursorDML.rowcount) +" tuplas.")
 ```
 
-Lendo dados do banco diretamente para um Pandas Dataframe
+## Lendo dados do banco diretamente para um Pandas Dataframe
 
-Agora trataremos os dados diretamente no Pandas, realizando uma consulta SQL pelo método read_sql_query().
+Agora trataremos os dados diretamente no Pandas, realizando uma consulta SQL pelo método **read_sql_query()**.
 
 
-Um dataframe nada mais é do que uma tabela (uma relação) em memória. Muito provavelmente, ler uma tabela inteira em memória vai causar problemas de falta de memória e de processamento. Uma solução é ler pedaços (chunks) da tabela em um objeto do tipo generator;
+Um dataframe nada mais é do que uma tabela (uma relação) em memória. Muito provavelmente, ler uma tabela inteira em memória vai causar problemas de falta de memória e de processamento. Uma solução é ler pedaços **(chunks)** da tabela em um objeto do tipo generator;
 
 ```python
 meuDataFrame = pd.read_sql_query('SELECT * FROM produto', con=conexao)
