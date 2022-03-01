@@ -21,3 +21,9 @@ https://www.oracle.com/database/technologies/instant-client/macos-intel-x86-down
 ### Pacote cx_Oracle
 
 O pacote cx_Oracle é um módulo de extensão Python que permite acesso ao banco de dados. Os programas feitos em Python poderão acessar às bibliotecas do cliente Oracle e ter acesso diretamente à base de dados. A vantagem desse processo está no fato do processamento dos dados serem feitos no Banco de Dados e não na memória da máquina, onde o código Python está rodando.
+
+
+
+![The cell output is displayed.] (cx_Oracle.png "Data hub")
+
+
