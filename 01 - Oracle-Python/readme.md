@@ -50,20 +50,20 @@ try:
 except Exception as e:
     print(str(e))
 ```
-### 4. Carregar o banco de dados Oracle. O método makedsn() cria a conexão com o servidor Oracle e o método connect() efetiva a conexão.
+#### 4. Carregar o banco de dados Oracle. O método makedsn() cria a conexão com o servidor Oracle e o método connect() efetiva a conexão.
 
 ```python
 dsnStr = cx_Oracle.makedsn("localhost", "1521", "xe")
 conexao = cx_Oracle.connect(user="seu user", password="password", dsn=dsnStr)
 print(conexao.version)
 ```
-### 5. Abrir um cursor. Uma conexão fornece objetos do tipo cursor; os quais permitem operações DDL e DML no banco conectado.
+#### 5. Abrir um cursor. Uma conexão fornece objetos do tipo cursor; os quais permitem operações DDL e DML no banco conectado.
 
 ```python
 cursorDDL = conexao.cursor()
 cursorDML = conexao.cursor()
 ```
-### 6. Criar tabelas lendo o arquivo Esquema_Papelaria.sql clonado para sua pasta local.
+#### 6. Criar tabelas lendo o arquivo Esquema_Papelaria.sql clonado para sua pasta local.
 
 ```python
 fd = open('./Dados/Esquema_Papelaria.sql', 'r')
@@ -85,7 +85,7 @@ print('Script finalizado.')
 Se o erro invalid SQL statement aparecer, pode IGNORAR! Ocorre por ser o fim do arquivo.
 ```
 
-### 7. Inserir registros dentro das tabelas com o arquivo Dados_Papelaria.sql
+#### 7. Inserir registros dentro das tabelas com o arquivo Dados_Papelaria.sql
 
 ```python
 fd = open('./Dados/Dados_Papelaria.sql', 'r')
@@ -104,14 +104,14 @@ for command in sqlCommands:
 print('Script finalizado.')
 Ignore a mensagem "Erro de SQL: ORA-00900: Instrução SQL Inválida: |"
 ```
-### 8. Usar o cursorDML para inserir registros também. Para isso é só usar o método execute().
+#### 8. Usar o cursorDML para inserir registros também. Para isso é só usar o método execute().
 
 ```python
 cursorDML.execute("insert into produto values (9,'Lapiseira Pentel 07', 'ambos', (19.80))");
 
 cursorDML.execute("insert into produto values (10,'grampos','escritório', (4.80))");
 ```
-### 9. Agora podemos confirmar as inserções com commit() ou cancelar tudo com rollback().
+#### 9. Agora podemos confirmar as inserções com commit() ou cancelar tudo com rollback().
 
 ```python
 conexao.commit()
@@ -122,7 +122,7 @@ Pode-se requisitar os dados da base um por vez, o que consome mais recursos de r
 
 Há também a possibilidade de requisitar múltiplos dados por vez (batch), sendo este um processo mais eficiente. Se houver memória suficiente — ou poucos dados —, pode-se recuperar todos os dados de uma vez.
 
-- Recuperando 1 por vez:
+- **Recuperando 1 por vez:**
 ```python
 cursorDML.execute("select * from produto where categoria = \'escolar\'")
 while True:
@@ -130,7 +130,7 @@ while True:
  if row is None: break
     print(row)
 ```
-- Recuperando por Batch:
+- **Recuperando por Batch:**
 ```python
 cursorDML.execute("select * from produto")
 Lote de 3 em 3 registros (tuplas)
